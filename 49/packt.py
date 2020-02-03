@@ -3,13 +3,13 @@ from collections import namedtuple
 from bs4 import BeautifulSoup as Soup
 import requests
 
-# =============================================================================
-# PACKT = 'https://bites-data.s3.us-east-2.amazonaws.com/packt.html'
-# CONTENT = requests.get(PACKT).text
-# =============================================================================
+PACKT = 'https://bites-data.s3.us-east-2.amazonaws.com/packt.html'
+CONTENT = requests.get(PACKT).text
 
-with open('packet.html', 'r') as r:
-    CONTENT = r.read()
+# =============================================================================
+# with open('packet.html', 'r') as r:
+#     CONTENT = r.read()
+# =============================================================================
 
 Book = namedtuple('Book', 'title description image link')
 
