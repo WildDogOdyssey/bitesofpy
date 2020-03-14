@@ -14,4 +14,4 @@ def print_workout_days(workout: str, my_workouts: dict = WORKOUTS) -> None:
             if workout.lower() in wo.lower()]
     print(', '.join(days) if days else 'No matching workout')
 
-# print_workout_days(1)
+print_workout_days(' ')
