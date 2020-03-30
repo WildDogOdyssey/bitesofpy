@@ -45,4 +45,4 @@ def get_winner(players):
             raise ValueError
             break
 
-    return max([(player, calculate_score(player.scores)) for player in players], key=lambda x: x[1])[0]
+    return max(players, key=lambda x: calculate_score(x.scores))
