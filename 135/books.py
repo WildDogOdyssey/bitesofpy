@@ -55,7 +55,7 @@ def sort_books_by_number_of_page(books=books):
     Expected last book in list:
     Fluent Python
     """
-    return sorted(books, key=lambda book: pages(book))
+    return sorted(books, key=pages)
 
 
 def sort_books_by_published_date(books=books):
