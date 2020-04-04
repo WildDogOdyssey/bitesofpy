@@ -15,13 +15,11 @@ def simple_calculator(calculation):
        If bad data is passed in, raise a ValueError.
     """
 
-    ops_dict = dict(zip('+ - * /'.split(), [add, sub, mul, truediv]))
-
-    a, ops, b = calculation.split()
+    OPS_DICT = dict(zip('+ - * /'.split(), [add, sub, mul, truediv]))
 
     try:
-        func = ops_dict[ops]
-        return func(int(a), int(b))
+        a, sign, b = calculation.split()
+        return OPS_DICT[sign](int(a), int(b))
     except (KeyError, ZeroDivisionError):
         raise ValueError
 
