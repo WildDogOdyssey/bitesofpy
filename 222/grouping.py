@@ -17,7 +17,7 @@ def group(iterable, n):
                where each group is a list of n elements.
     """
     lst = list(iterable)
-    return [lst[(i*n):(i + 1)*n] for i in range(len(lst)) if lst[(i*n):(i + 1)*n]]
+    return [lst[start:(start + n)] for start in range(0, len(lst), n)]
 
 
 if __name__ == '__main__':
