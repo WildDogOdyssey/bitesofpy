@@ -4,10 +4,6 @@ def is_anagram(word1, word2):
        About anagrams: https://en.wikipedia.org/wiki/Anagram"""
     word1_lst = sorted([ch for ch in word1.lower() if ch.isalnum()])
     word2_lst = sorted([ch for ch in word2.lower() if ch.isalnum()])
-
-    if word1_lst == word2_lst:
-        return True
-    else:
-        return False
+    return word1_lst == word2_lst
 
 # print(is_anagram("rail safety", "fairy tales"))
