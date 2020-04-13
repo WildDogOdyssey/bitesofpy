@@ -14,8 +14,6 @@ class Movie:
     title: str
     release_date: str
 
-def _convert_to_date(str):
-    return parse(str)
 
 def get_age(actor: Actor, movie: Movie) -> str:
     """Calculates age of actor / actress when movie was released,
@@ -25,7 +23,5 @@ def get_age(actor: Actor, movie: Movie) -> str:
        e.g.
        Wesley Snipes was 28 years old when New Jack City came out.
     """
-    release = _convert_to_date(movie.release_date)
-    birthday = _convert_to_date(actor.born)
-    age = relativedelta(release, birthday).years
+    age = relativedelta(parse(movie.release_date), parse(actor.born)).years
     return f'{actor.name} was {age} years old when {movie.title} came out.'
