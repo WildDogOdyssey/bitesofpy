@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 
-@dataclass()
+@dataclass(order=True)
 class Bite(object):
     number: int
     title: str
@@ -9,8 +9,8 @@ class Bite(object):
     def __post_init__(self):
         self.title = self.title.capitalize()
 
-    def __lt__(self, other):
-        return True if self.number < other.number else False
+    # def __lt__(self, other):
+    #     return True if self.number < other.number else False
 
 # b1 = Bite(number=1, title="sum of numbers")
 # b2 = Bite(number=2, title="a second bite", level="Intermediate")
