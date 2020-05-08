@@ -15,4 +15,4 @@ class Score(Enum):
     @classmethod
     def average(cls):
         values = [val.value for val in cls.__members__.values()]
-        return sum(values) / len(values)
+        return sum(values) / len(cls)
