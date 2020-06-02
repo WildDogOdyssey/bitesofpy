@@ -15,9 +15,7 @@ RN = {
 def romanize(decimal_number: int) -> str:
     """Takes a decimal number int and converts its Roman Numeral str"""
 
-    if not isinstance(decimal_number, int):
-        raise ValueError
-    if (decimal_number <= 0 or decimal_number >= 4000):
+    if not isinstance(decimal_number, int) or not 0 < decimal_number < 4000:
         raise ValueError
 
     dn_str = str(decimal_number)
