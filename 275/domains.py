@@ -14,7 +14,7 @@ def get_common_domains(url=COMMON_DOMAINS):
     """Scrape the url return the 100 most common domain names"""
     page = requests.get(url)
     soup = bs4.BeautifulSoup(page.content, 'html.parser')
-    table = soup.h2.next_sibling.next_sibling.table
+    table = soup.find('div', TARGET_DIV).table
     emails = [tr.find_all('td')[-2].text
               for tr in table.find_all('tr') if tr]
     return emails
